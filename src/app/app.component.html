@@ -1,0 +1,30 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid"  style="background-color: rgb(26, 61, 61);">
+      <a class="navbar-brand" href="#" style="color: white;">El Clima</a>
+    </div>
+</nav>
+<div class="contaiener  col-8" style="margin: auto;">
+<div class="col-12" style="margin-bottom: 20px;" >
+    <img style="width: 100%; height: 150px;" src="../assets/images/banner_clima_radioformula-3.png" alt="">
+</div>
+
+    <div class="" >
+        <form style="margin-bottom: 20px;">
+            <input type="text"#ciudad class="col-10">
+            <button (click)="ServicioCiudad(ciudad)"class="col-2 btn-primary">Buscar</button>
+        </form>
+        <div class="row">
+        <ngb-accordion  style="margin-bottom: 5px;" *ngFor="let clima of clima" [closeOthers]=true class="col-6" style="background-color: rgba(0, 0, 0, 0);">
+            
+            <ngb-panel id="panel2"style="margin-bottom: 5px;" >
+                <ng-template ngbPanelTitle class="" style="background-color: black;"  style="margin-bottom: 5px;"  >
+                    <input type="text" style="display: none;" #temp value="{{clima.woeid}}">
+                    <button class="col-12 btn-primary" (click)="ServicioTemperatura(temp)"> {{clima.title}} </button>
+                    <ng-template ngbPanelContent><app-datos [datoTemp]="tiempo"> {{tiempo}} </app-datos></ng-template>
+                </ng-template>
+            </ngb-panel>
+           
+        </ngb-accordion>
+        </div>
+    </div>
+</div>

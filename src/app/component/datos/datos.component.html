@@ -1,0 +1,17 @@
+<input value="{{datoTemp}}"#Dato style="display: none;">
+<button (click)="serviceDatos(Dato); "  class="col-12  btn-success">mostrar</button> 
+<div class="card col-12" *ngIf="show" >
+    <div class="row g-0">
+      <div class="col-6" style="margin:auto">
+        <img src="https://www.metaweather.com/static/img/weather/png/64/{{tempera.weather_state_abbr}}.png" alt="...">
+      </div>
+      <div class="col-md-6">
+        <div class="card-body">
+          <h5 class="card-title">Max: {{tempera.max_temp.toFixed(1)}}°</h5>
+          <h6 class="card-title">Min: {{tempera.min_temp.toFixed(1)}}°</h6>
+          <p class="card-text">State: {{tempera.weather_state_name}}</p>
+        </div>
+      </div>
+    </div>
+</div>
+
